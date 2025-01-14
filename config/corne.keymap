@@ -1,56 +1,227 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    combos {
+        compatible = "zmk,combos";
 
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
-
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
+        Num_1 {
+            bindings = <&kp N1>;
+            key-positions = <16 4>;
         };
+
+        Num_2 {
+            bindings = <&kp N2>;
+            key-positions = <7 19>;
+        };
+
+        Num_3 {
+            bindings = <&kp N3>;
+            key-positions = <3 15>;
+        };
+
+        Num_4 {
+            bindings = <&kp N4>;
+            key-positions = <8 20>;
+        };
+
+        Num_5 {
+            bindings = <&kp NUMBER_5>;
+            key-positions = <2 14>;
+        };
+
+        Num_6 {
+            bindings = <&kp N6>;
+            key-positions = <9 21>;
+        };
+
+        Num_7 {
+            bindings = <&kp NUMBER_7>;
+            key-positions = <1 13>;
+        };
+
+        Num_8 {
+            bindings = <&kp NUMBER_8>;
+            key-positions = <10 22>;
+        };
+
+        Num_9 {
+            bindings = <&kp NUMBER_9>;
+            key-positions = <5 17>;
+        };
+
+        Num_0 {
+            bindings = <&kp N0>;
+            key-positions = <6 18>;
+        };
+
+        fun_1 {
+            bindings = <&kp F1>;
+            key-positions = <16 28>;
+        };
+
+        fun_2 {
+            bindings = <&kp F2>;
+            key-positions = <19 31>;
+        };
+
+        fun_3 {
+            bindings = <&kp F3>;
+            key-positions = <15 27>;
+        };
+
+        fun_4 {
+            bindings = <&kp F4>;
+            key-positions = <20 32>;
+        };
+
+        fun_5 {
+            bindings = <&kp F5>;
+            key-positions = <14 26>;
+        };
+
+        fun_6 {
+            bindings = <&kp F6>;
+            key-positions = <21 33>;
+        };
+
+        fun_7 {
+            bindings = <&kp F7>;
+            key-positions = <13 25>;
+        };
+
+        fun_8 {
+            bindings = <&kp F8>;
+            key-positions = <22 34>;
+        };
+
+        fun_9 {
+            bindings = <&kp F9>;
+            key-positions = <17 29>;
+        };
+
+        fun_10 {
+            bindings = <&kp F10>;
+            key-positions = <18 30>;
+        };
+
+        fun_11 {
+            bindings = <&kp F11>;
+            key-positions = <12 24>;
+        };
+
+        fun_12 {
+            bindings = <&kp F12>;
+            key-positions = <23 35>;
+        };
+
+        combo_lbrck {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <0 12>;
+        };
+
+        combo_rbrckt {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <11 23>;
+        };
+
+        combo_return {
+            bindings = <&kp RETURN>;
+            key-positions = <38 39>;
+        };
+
+        combo_lgui {
+            bindings = <&kp LGUI>;
+            key-positions = <24 25>;
+        };
+
+        combo_rgui {
+            bindings = <&kp RGUI>;
+            key-positions = <34 35>;
+        };
+
+        combo_esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        combo_copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <2 3 4>;
+        };
+
+        combo_cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <2 3>;
+        };
+
+        combo_paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <2 4>;
+        };
+
+        combo_caps {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <24 35>;
+        };
+    };
+
+    behaviors {
+        mod_tog: mod_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_TOG";
+            bindings = <&kp>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        Base {
+            bindings = <
+&kp TAB               &kp APOS  &kp COMMA  &kp DOT          &kp P                &kp Y          &kp F        &kp G             &kp C            &kp R  &kp L  &kp SLASH
+&kp EQUAL             &kp A     &kp O      &kp E            &kp U                &kp I          &kp D        &kp H             &kp T            &kp N  &kp S  &kp MINUS
+&mt LEFT_SHIFT GRAVE  &kp SEMI  &kp Q      &kp J            &kp K                &kp X          &kp B        &kp M             &kp W            &kp V  &kp Z  &mt RIGHT_SHIFT BACKSLASH
+                                           &mod_tog LALT 1  &mt LCTRL BACKSPACE  &lt 1 SPACE    &lt 2 SPACE  &mt RCTRL DELETE  &mod_tog RALT 2
+            >;
+        };
+
+        Nav-Num {
+            bindings = <
+&trans  &kp PRINTSCREEN  &kp HOME  &kp UP_ARROW  &kp PAGE_UP    &trans    &kp ASTERISK  &kp N7  &kp N8   &kp N9  &kp FSLH   &none
+&trans  &kp DELETE       &kp LEFT  &kp DOWN      &kp RIGHT      &trans    &kp PLUS      &kp N4  &kp N5   &kp N6  &kp MINUS  &none
+&trans  &kp INS          &kp END   &kp K_APP     &kp PAGE_DOWN  &trans    &kp ESC       &kp N1  &kp N2   &kp N3  &kp EQUAL  &none
+                                   &trans        &trans         &trans    &kp RET       &kp N0  &kp DOT
+            >;
+
+            label = "^|#";
+        };
+
+        Num-Nav {
+            bindings = <
+&none  &kp ASTERISK  &kp N7  &kp N8   &kp N9  &kp FSLH     &trans  &kp PAGE_UP    &kp UP_ARROW  &kp HOME   &kp PRINTSCREEN  &trans
+&none  &kp PLUS      &kp N4  &kp N5   &kp N6  &kp MINUS    &trans  &kp LEFT       &kp DOWN      &kp RIGHT  &kp DELETE       &trans
+&none  &kp ESC       &kp N1  &kp N2   &kp N3  &kp EQUAL    &trans  &kp PAGE_DOWN  &kp K_APP     &kp END    &kp INS          &trans
+                             &kp DOT  &kp N0  &kp RET      &trans  &trans         &trans
+            >;
+
+            label = "#|^";
+        };
+
+        Bluetooth {
+            bindings = <
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_CLR  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &trans      &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &trans      &trans  &trans  &trans  &trans  &trans
+                                    &trans        &trans        &trans          &trans      &trans  &trans
+            >;
+
+            label = "BT";
+        };
+    };
 };
